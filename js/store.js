@@ -81,7 +81,7 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-	    var newId = `${Date.now() + Math.random()}`; // Fix potential identical ID, with Date.now() -> time in ms since 1st January 1970 00:00:00 UTC
+	    var newId = `${Date.now() + Math.random()}`; // Fix potential identical IDs, with Date.now() -> time in ms since 1st January 1970 00:00:00 UTC
 		/*
 	    var charset = "0123456789";
 
@@ -129,12 +129,14 @@
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == id) {
 				todoId = todos[i].id;
+				console.log(todoId);
 			}
 		}
 
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == todoId) {
 				todos.splice(i, 1);
+				console.log(todos.splice(i, 1));
 			}
 		}
 
