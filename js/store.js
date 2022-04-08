@@ -81,7 +81,7 @@
 		callback = callback || function () {};
 
 		// Generate an ID
-	    var newId = `${Date.now() + Math.random()}`; // Fix potential identical IDs, with Date.now() -> time in ms since 1st January 1970 00:00:00 UTC
+	    var newId = `${Date.now()}`; // Fix potential identical IDs, with Date.now() -> time in ms since 1st January 1970 00:00:00 UTC
 		/*
 	    var charset = "0123456789";
 
@@ -124,8 +124,15 @@
 	Store.prototype.remove = function (id, callback) {
 		var data = JSON.parse(localStorage[this._dbName]);
 		var todos = data.todos;
-		var todoId;
+		// var todoId; Useless variable
 		
+		for (var i = 0; i < todos.length; i++) {
+			if (todos[i].id == id) {
+				todos.splice(i, 1);
+			}
+		}
+
+		/*
 		for (var i = 0; i < todos.length; i++) {
 			if (todos[i].id == id) {
 				todoId = todos[i].id;
@@ -139,6 +146,7 @@
 				console.log(todos.splice(i, 1));
 			}
 		}
+		*/
 
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, todos);
