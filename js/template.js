@@ -25,7 +25,8 @@
 	};
 
 	/**
-	 * Sets up defaults for all the Template methods such as a default template
+	 * @function Template
+	 * @description Sets up defaults for all the Template methods such as a default template
 	 *
 	 * @constructor
 	 */
@@ -41,7 +42,8 @@
 	}
 
 	/**
-	 * Creates an <li> HTML string and returns it for placement in your app.
+	 * @function show
+	 * @description Creates an <li> HTML string and returns it for placement in your app.
 	 *
 	 * NOTE: In real life you should be using a templating engine such as Mustache
 	 * or Handlebars, however, this is a vanilla JS example.
@@ -83,7 +85,8 @@
 	};
 
 	/**
-	 * Displays a counter of how many to dos are left to complete
+	 * @function itemCounter
+	 * @description Displays a counter of how many to dos are left to complete
 	 *
 	 * @param {number} activeTodos The number of active todos.
 	 * @returns {string} String containing the count
@@ -95,9 +98,10 @@
 	};
 
 	/**
-	 * Updates the text within the "Clear completed" button
+	 * @function clearCompletedButton
+	 * @description Updates the text within the "Clear completed" button
 	 *
-	 * @param  {[type]} completedTodos The number of completed todos.
+	 * @param {type[]} completedTodos The number of completed todos.
 	 * @returns {string} String containing the count
 	 */
 	Template.prototype.clearCompletedButton = function (completedTodos) {

@@ -3,7 +3,8 @@
 	'use strict';
 
 	/**
-	 * Creates a new client side storage object and will create an empty
+	 * @function Store
+	 * @description Creates a new client side storage object and will create an empty
 	 * collection if no collection already exists.
 	 *
 	 * @param {string} name The name of our DB we want to use
@@ -27,7 +28,8 @@
 	}
 
 	/**
-	 * Finds items based on a query given as a JS object
+	 * @function find
+	 * @description Finds items based on a query given as a JS object
 	 *
 	 * @param {object} query The query to match against (i.e. {foo: 'bar'})
 	 * @param {function} callback	 The callback to fire when the query has
@@ -57,7 +59,8 @@
 	};
 
 	/**
-	 * Will retrieve all data from the collection
+	 * @function findAll
+	 * @description Will retrieve all data from the collection
 	 *
 	 * @param {function} callback The callback to fire upon retrieving data
 	 */
@@ -67,7 +70,8 @@
 	};
 
 	/**
-	 * Will save the given data to the DB. If no item exists it will create a new
+	 * @function save
+	 * @description Will save the given data to the DB. If no item exists it will create a new
 	 * item, otherwise it'll simply update an existing item's properties
 	 *
 	 * @param {object} updateData The data to save back into the DB
@@ -116,7 +120,8 @@
 	};
 
 	/**
-	 * Will remove an item from the Store based on its ID
+	 * @function remove
+	 * @description Will remove an item from the Store based on its ID
 	 *
 	 * @param {number} id The ID of the item you want to remove
 	 * @param {function} callback The callback to fire after saving
@@ -153,7 +158,8 @@
 	};
 
 	/**
-	 * Will drop all storage and start fresh
+	 * @function callback
+	 * @description Will drop all storage and start fresh
 	 *
 	 * @param {function} callback The callback to fire after dropping the data
 	 */
