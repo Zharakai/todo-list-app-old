@@ -30,26 +30,55 @@
 		this.$newTodo = qs('.new-todo');
 	}
 
+	/**
+	 * @function _removeItem
+	 * @description Remove the item with this id as argument
+	 * 
+	 * @param {number} id 
+	 */
 	View.prototype._removeItem = function (id) {
 		var elem = qs('[data-id="' + id + '"]');
 
 		if (elem) {
+			console.log(this.$todoList);
 			this.$todoList.removeChild(elem);
 		}
 	};
 
+	/**
+	 * @function _clearCompletedButton
+	 * @description Hide or display button "Clear completed"
+	 * 
+	 * @param {number} completedCount 
+	 * @param {boolean} visible 
+	 */
 	View.prototype._clearCompletedButton = function (completedCount, visible) {
 		this.$clearCompleted.innerHTML = this.template.clearCompletedButton(completedCount);
 		this.$clearCompleted.style.display = visible ? 'block' : 'none';
 	};
 
+	/**
+	 * @function _setFilter
+	 * @description wip
+	 * 
+	 * @param {string} currentPage 
+	 */
 	View.prototype._setFilter = function (currentPage) {
 		qs('.filters .selected').className = '';
 		qs('.filters [href="#/' + currentPage + '"]').className = 'selected';
 	};
 
+	/**
+	 * @function _elementComplete
+	 * @description Add "completed" class to li element with corresponding data-id
+	 * 
+	 * @param {number} id 
+	 * @param {boolean} completed 
+	 * @returns {HTMLElement}
+	 */
 	View.prototype._elementComplete = function (id, completed) {
 		var listItem = qs('[data-id="' + id + '"]');
+		console.log(listItem);
 
 		if (!listItem) {
 			return;
@@ -61,7 +90,15 @@
 		qs('input', listItem).checked = completed;
 	};
 
+	/**
+	 * @function _editItem
+	 * @description wip
+	 * 
+	 * @param {number} id 
+	 * @param {string} title 
+	 */
 	View.prototype._editItem = function (id, title) {
+		console.log(id, title);
 		var listItem = qs('[data-id="' + id + '"]');
 
 		if (!listItem) {
@@ -78,6 +115,13 @@
 		input.value = title;
 	};
 
+	/**
+	 * @function _editItemDone
+	 * @description wip
+	 * 
+	 * @param {number} id 
+	 * @param {string} title 
+	 */
 	View.prototype._editItemDone = function (id, title) {
 		var listItem = qs('[data-id="' + id + '"]');
 
@@ -95,7 +139,15 @@
 		});
 	};
 
+	/**
+	 * @function render
+	 * @description wip
+	 * 
+	 * @param {string} viewCmd
+	 * @param {object} parameter 
+	 */
 	View.prototype.render = function (viewCmd, parameter) {
+		console.log(typeof viewCmd, parameter);
 		var self = this;
 		var viewCommands = {
 			showEntries: function () {
@@ -136,11 +188,26 @@
 		viewCommands[viewCmd]();
 	};
 
+	/**
+	 * @function _itemId
+	 * @description Return id of a checked element
+	 * 
+	 * @param {HTMLElement} element 
+	 * @returns {number}
+	 */
 	View.prototype._itemId = function (element) {
+		console.log(element);
 		var li = $parent(element, 'li');
+		console.log(parseInt(li.dataset.id, 10));
 		return parseInt(li.dataset.id, 10);
 	};
 
+	/**
+	 * @function _bindItemEditDone
+	 * @description wip
+	 * 
+	 * @param {*} handler 
+	 */
 	View.prototype._bindItemEditDone = function (handler) {
 		var self = this;
 		$delegate(self.$todoList, 'li .edit', 'blur', function () {
@@ -161,6 +228,12 @@
 		});
 	};
 
+	/**
+	 * @function _bindItemEditCancel
+	 * @description wip
+	 * 
+	 * @param {*} handler 
+	 */
 	View.prototype._bindItemEditCancel = function (handler) {
 		var self = this;
 		$delegate(self.$todoList, 'li .edit', 'keyup', function (event) {
@@ -173,6 +246,13 @@
 		});
 	};
 
+	/**
+	 * @function bind
+	 * @description wip
+	 * 
+	 * @param {*} event 
+	 * @param {*} handler 
+	 */
 	View.prototype.bind = function (event, handler) {
 		var self = this;
 		if (event === 'newTodo') {
