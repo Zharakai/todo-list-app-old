@@ -1,11 +1,10 @@
-(function (window) {
+(/** @lends Controller */function (window) {
 	'use strict';
 
 	/**
-	 * @function Controller
+	 * @constructor
 	 * @description Takes a model and view and acts as the controller between them
 	 *
-	 * @constructor
 	 * @param {object} model The model instance
 	 * @param {object} view The view instance
 	 */
@@ -48,7 +47,6 @@
 	}
 
 	/**
-	 * @function setView
 	 * @description Loads and initialises the view
 	 *
 	 * @param {string} '' | 'active' | 'completed'
@@ -60,7 +58,6 @@
 	};
 
 	/**
-	 * @function showAll
 	 * @description An event to fire on load. Will get all items and display them in the
 	 * todo-list
 	 */
@@ -72,7 +69,6 @@
 	};
 
 	/**
-	 * @function showActive
 	 * @description Renders all active tasks
 	 */
 	Controller.prototype.showActive = function () {
@@ -83,7 +79,6 @@
 	};
 
 	/**
-	 * @function showCompleted
 	 * @description Renders all completed tasks
 	 */
 	Controller.prototype.showCompleted = function () {
@@ -94,7 +89,6 @@
 	};
 
 	/**
-	 * @function addItem
 	 * @description An event to fire whenever you want to add an item. Simply pass in the event
 	 * object and it'll handle the DOM insertion and saving of the new item.
 	 */
@@ -112,7 +106,6 @@
 	};
 
 	/**
-	 * @function editItem
 	 * @description Triggers the item editing mode.
 	 */
 	Controller.prototype.editItem = function (id) {
@@ -123,7 +116,6 @@
 	};
 
 	/**
-	 * @function editItemSave
 	 * @description Finishes the item editing mode successfully.
 	 */
 	Controller.prototype.editItemSave = function (id, title) {
@@ -147,7 +139,6 @@
 	};
 
 	/**
-	 * @function editItemCancel
 	 * @description Cancels the item editing mode.
 	 */
 	Controller.prototype.editItemCancel = function (id) {
@@ -158,7 +149,6 @@
 	};
 
 	/**
-	 * @function removeItem
 	 * @description By giving it an ID it'll find the DOM element matching that ID,
 	 * remove it from the DOM and also remove it from storage.
 	 *
@@ -190,7 +180,6 @@
 	};
 
 	/**
-	 * @function removeCompletedItems
 	 * @description Will remove all completed items from the DOM and storage.
 	 */
 	Controller.prototype.removeCompletedItems = function () {
@@ -205,7 +194,6 @@
 	};
 
 	/**
-	 * @function toggleComplete
 	 * @description Give it an ID of a model and a checkbox and it will update the item
 	 * in storage based on the checkbox's state.
 	 *
@@ -229,7 +217,6 @@
 	};
 
 	/**
-	 * @function toggleAll
 	 * @description Will toggle ALL checkboxes' on/off state and completeness of models.
 	 * Just pass in the event object.
 	 */
@@ -245,7 +232,6 @@
 	};
 
 	/**
-	 * @function _updateCount
 	 * @description Updates the pieces of the page which change depending on the remaining
 	 * number of todos.
 	 */
@@ -264,7 +250,6 @@
 	};
 
 	/**
-	 * @function _filter
 	 * @description Re-filters the todo items, based on the active route.
 	 * @param {boolean|undefined} force  forces a re-painting of todo items.
 	 */
@@ -285,7 +270,6 @@
 	};
 
 	/**
-	 * @function _updateFilterState
 	 * @description Simply updates the filter nav's selected states
 	 */
 	Controller.prototype._updateFilterState = function (currentPage) {

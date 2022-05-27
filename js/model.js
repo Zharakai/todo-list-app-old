@@ -1,8 +1,7 @@
-(function (window) {
+(/** @lends Model */function (window) {
 	'use strict';
 
 	/**
-	 * @function Model
 	 * @description Creates a new Model instance and hooks up the storage.
 	 *
 	 * @constructor
@@ -13,7 +12,6 @@
 	}
 
 	/**
-	 * @function create
 	 * @description Creates a new todo model
 	 *
 	 * @param {string} [title] The title of the task
@@ -32,7 +30,6 @@
 	};
 
 	/**
-	 * @function read
 	 * @description Finds and returns a model in storage. If no query is given it'll simply
 	 * return everything. If you pass in a string or number it'll look that up as
 	 * the ID of the model to find. Lastly, you can pass it an object to match
@@ -63,7 +60,6 @@
 	};
 
 	/**
-	 * @function update
 	 * @description Updates a model by giving it an ID, data to update, and a callback to fire when
 	 * the update is complete.
 	 *
@@ -76,7 +72,6 @@
 	};
 
 	/**
-	 * @function remove
 	 * @description Removes a model from storage
 	 *
 	 * @param {number} id The ID of the model to remove
@@ -87,7 +82,6 @@
 	};
 
 	/**
-	 * @function removeAll
 	 * @description WARNING: Will remove ALL data from storage.
 	 *
 	 * @param {function} callback The callback to fire when the storage is wiped.
@@ -97,7 +91,6 @@
 	};
 
 	/**
-	 * @function getCount
 	 * @description Returns a count of all todos
 	 */
 	Model.prototype.getCount = function (callback) {

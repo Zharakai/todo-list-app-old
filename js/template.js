@@ -1,5 +1,5 @@
 /*jshint laxbreak:true */
-(function (window) {
+(/** @lends Template */function (window) {
 	'use strict';
 
 	var htmlEscapes = {
@@ -25,7 +25,6 @@
 	};
 
 	/**
-	 * @function Template
 	 * @description Sets up defaults for all the Template methods such as a default template
 	 *
 	 * @constructor
@@ -42,7 +41,6 @@
 	}
 
 	/**
-	 * @function show
 	 * @description Creates an <li> HTML string and returns it for placement in your app.
 	 *
 	 * NOTE: In real life you should be using a templating engine such as Mustache
@@ -85,7 +83,6 @@
 	};
 
 	/**
-	 * @function itemCounter
 	 * @description Displays a counter of how many to dos are left to complete
 	 *
 	 * @param {number} activeTodos The number of active todos.
@@ -98,7 +95,6 @@
 	};
 
 	/**
-	 * @function clearCompletedButton
 	 * @description Updates the text within the "Clear completed" button
 	 *
 	 * @param {type[]} completedTodos The number of completed todos.

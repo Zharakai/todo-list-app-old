@@ -68,7 +68,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller.html">Controller</a></li><li><a href="Model.html">Model</a></li><li><a href="Template.html">Template</a></li><li><a href="View.html">View</a></li></ul><h3>Global</h3><ul><li><a href="global.html#_bindItemEditCancel">_bindItemEditCancel</a></li><li><a href="global.html#_bindItemEditDone">_bindItemEditDone</a></li><li><a href="global.html#_clearCompletedButton">_clearCompletedButton</a></li><li><a href="global.html#_editItem">_editItem</a></li><li><a href="global.html#_editItemDone">_editItemDone</a></li><li><a href="global.html#_elementComplete">_elementComplete</a></li><li><a href="global.html#_filter">_filter</a></li><li><a href="global.html#_itemId">_itemId</a></li><li><a href="global.html#_removeItem">_removeItem</a></li><li><a href="global.html#_setFilter">_setFilter</a></li><li><a href="global.html#_updateCount">_updateCount</a></li><li><a href="global.html#_updateFilterState">_updateFilterState</a></li><li><a href="global.html#addItem">addItem</a></li><li><a href="global.html#bind">bind</a></li><li><a href="global.html#callback">callback</a></li><li><a href="global.html#clearCompletedButton">clearCompletedButton</a></li><li><a href="global.html#create">create</a></li><li><a href="global.html#editItem">editItem</a></li><li><a href="global.html#editItemCancel">editItemCancel</a></li><li><a href="global.html#editItemSave">editItemSave</a></li><li><a href="global.html#find">find</a></li><li><a href="global.html#findAll">findAll</a></li><li><a href="global.html#getCount">getCount</a></li><li><a href="global.html#itemCounter">itemCounter</a></li><li><a href="global.html#read">read</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeAll">removeAll</a></li><li><a href="global.html#removeCompletedItems">removeCompletedItems</a></li><li><a href="global.html#removeItem">removeItem</a></li><li><a href="global.html#render">render</a></li><li><a href="global.html#save">save</a></li><li><a href="global.html#setView">setView</a></li><li><a href="global.html#show">show</a></li><li><a href="global.html#showActive">showActive</a></li><li><a href="global.html#showAll">showAll</a></li><li><a href="global.html#showCompleted">showCompleted</a></li><li><a href="global.html#Store">Store</a></li><li><a href="global.html#Todo">Todo</a></li><li><a href="global.html#toggleAll">toggleAll</a></li><li><a href="global.html#toggleComplete">toggleComplete</a></li><li><a href="global.html#update">update</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="Controller-Controller.html">Controller</a></li><li><a href="Model-Model.html">Model</a></li><li><a href="Template-Template.html">Template</a></li><li><a href="Todo-Todo.html">Todo</a></li><li><a href="View.html">View</a></li></ul></div>
                 
             </nav>
         </div>
@@ -85,14 +85,13 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>(function (window) {
+            <pre class="prettyprint source linenums"><code>(/** @lends Controller */function (window) {
 	'use strict';
 
 	/**
-	 * @function Controller
+	 * @constructor
 	 * @description Takes a model and view and acts as the controller between them
 	 *
-	 * @constructor
 	 * @param {object} model The model instance
 	 * @param {object} view The view instance
 	 */
@@ -135,7 +134,6 @@
 	}
 
 	/**
-	 * @function setView
 	 * @description Loads and initialises the view
 	 *
 	 * @param {string} '' | 'active' | 'completed'
@@ -147,7 +145,6 @@
 	};
 
 	/**
-	 * @function showAll
 	 * @description An event to fire on load. Will get all items and display them in the
 	 * todo-list
 	 */
@@ -159,7 +156,6 @@
 	};
 
 	/**
-	 * @function showActive
 	 * @description Renders all active tasks
 	 */
 	Controller.prototype.showActive = function () {
@@ -170,7 +166,6 @@
 	};
 
 	/**
-	 * @function showCompleted
 	 * @description Renders all completed tasks
 	 */
 	Controller.prototype.showCompleted = function () {
@@ -181,7 +176,6 @@
 	};
 
 	/**
-	 * @function addItem
 	 * @description An event to fire whenever you want to add an item. Simply pass in the event
 	 * object and it'll handle the DOM insertion and saving of the new item.
 	 */
@@ -199,7 +193,6 @@
 	};
 
 	/**
-	 * @function editItem
 	 * @description Triggers the item editing mode.
 	 */
 	Controller.prototype.editItem = function (id) {
@@ -210,7 +203,6 @@
 	};
 
 	/**
-	 * @function editItemSave
 	 * @description Finishes the item editing mode successfully.
 	 */
 	Controller.prototype.editItemSave = function (id, title) {
@@ -234,7 +226,6 @@
 	};
 
 	/**
-	 * @function editItemCancel
 	 * @description Cancels the item editing mode.
 	 */
 	Controller.prototype.editItemCancel = function (id) {
@@ -245,7 +236,6 @@
 	};
 
 	/**
-	 * @function removeItem
 	 * @description By giving it an ID it'll find the DOM element matching that ID,
 	 * remove it from the DOM and also remove it from storage.
 	 *
@@ -277,7 +267,6 @@
 	};
 
 	/**
-	 * @function removeCompletedItems
 	 * @description Will remove all completed items from the DOM and storage.
 	 */
 	Controller.prototype.removeCompletedItems = function () {
@@ -292,7 +281,6 @@
 	};
 
 	/**
-	 * @function toggleComplete
 	 * @description Give it an ID of a model and a checkbox and it will update the item
 	 * in storage based on the checkbox's state.
 	 *
@@ -316,7 +304,6 @@
 	};
 
 	/**
-	 * @function toggleAll
 	 * @description Will toggle ALL checkboxes' on/off state and completeness of models.
 	 * Just pass in the event object.
 	 */
@@ -332,7 +319,6 @@
 	};
 
 	/**
-	 * @function _updateCount
 	 * @description Updates the pieces of the page which change depending on the remaining
 	 * number of todos.
 	 */
@@ -351,7 +337,6 @@
 	};
 
 	/**
-	 * @function _filter
 	 * @description Re-filters the todo items, based on the active route.
 	 * @param {boolean|undefined} force  forces a re-painting of todo items.
 	 */
@@ -372,7 +357,6 @@
 	};
 
 	/**
-	 * @function _updateFilterState
 	 * @description Simply updates the filter nav's selected states
 	 */
 	Controller.prototype._updateFilterState = function (currentPage) {

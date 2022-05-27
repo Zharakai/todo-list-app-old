@@ -1,9 +1,9 @@
 /*global app, $on */
-(function () {
+(/** @lends Todo */function () {
 	'use strict';
 
 	/**
-	 * @function Todo
+	 * @constructor
 	 * @description Sets up a brand new Todo list.
 	 *
 	 * @param {string} name The name of your new to do list.

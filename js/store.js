@@ -1,9 +1,8 @@
 /*jshint eqeqeq:false */
-(function (window) {
+(/** @lends Store */function (window) {
 	'use strict';
 
 	/**
-	 * @function Store
 	 * @description Creates a new client side storage object and will create an empty
 	 * collection if no collection already exists.
 	 *
@@ -28,7 +27,6 @@
 	}
 
 	/**
-	 * @function find
 	 * @description Finds items based on a query given as a JS object
 	 *
 	 * @param {object} query The query to match against (i.e. {foo: 'bar'})
@@ -59,7 +57,6 @@
 	};
 
 	/**
-	 * @function findAll
 	 * @description Will retrieve all data from the collection
 	 *
 	 * @param {function} callback The callback to fire upon retrieving data
@@ -70,7 +67,6 @@
 	};
 
 	/**
-	 * @function save
 	 * @description Will save the given data to the DB. If no item exists it will create a new
 	 * item, otherwise it'll simply update an existing item's properties
 	 *
@@ -120,7 +116,6 @@
 	};
 
 	/**
-	 * @function remove
 	 * @description Will remove an item from the Store based on its ID
 	 *
 	 * @param {number} id The ID of the item you want to remove
@@ -158,7 +153,6 @@
 	};
 
 	/**
-	 * @function callback
 	 * @description Will drop all storage and start fresh
 	 *
 	 * @param {function} callback The callback to fire after dropping the data

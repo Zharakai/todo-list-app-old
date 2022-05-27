@@ -4,7 +4,7 @@
 	'use strict';
 
 	/**
-	 * @function View
+	 * @class View
 	 * @description View that abstracts away the browser's DOM completely.
 	 * It has two simple entry points:
 	 *
@@ -13,7 +13,6 @@
 	 *   - render(command, parameterObject)
      *     Renders the given command with the options
 	 * 
-	 * @constructor
 	 */
 	function View(template) {
 		this.template = template;
@@ -31,7 +30,6 @@
 	}
 
 	/**
-	 * @function _removeItem
 	 * @description Remove the item with this id as argument
 	 * 
 	 * @param {number} id 
@@ -46,7 +44,6 @@
 	};
 
 	/**
-	 * @function _clearCompletedButton
 	 * @description Hide or display button "Clear completed"
 	 * 
 	 * @param {number} completedCount 
@@ -58,7 +55,6 @@
 	};
 
 	/**
-	 * @function _setFilter
 	 * @description wip
 	 * 
 	 * @param {string} currentPage 
@@ -69,7 +65,6 @@
 	};
 
 	/**
-	 * @function _elementComplete
 	 * @description Add "completed" class to li element with corresponding data-id
 	 * 
 	 * @param {number} id 
@@ -91,7 +86,6 @@
 	};
 
 	/**
-	 * @function _editItem
 	 * @description wip
 	 * 
 	 * @param {number} id 
@@ -116,7 +110,6 @@
 	};
 
 	/**
-	 * @function _editItemDone
 	 * @description wip
 	 * 
 	 * @param {number} id 
@@ -140,7 +133,6 @@
 	};
 
 	/**
-	 * @function render
 	 * @description wip
 	 * 
 	 * @param {string} viewCmd
@@ -189,7 +181,6 @@
 	};
 
 	/**
-	 * @function _itemId
 	 * @description Return id of a checked element
 	 * 
 	 * @param {HTMLElement} element 
@@ -203,7 +194,6 @@
 	};
 
 	/**
-	 * @function _bindItemEditDone
 	 * @description wip
 	 * 
 	 * @param {*} handler 
@@ -229,7 +219,6 @@
 	};
 
 	/**
-	 * @function _bindItemEditCancel
 	 * @description wip
 	 * 
 	 * @param {*} handler 
@@ -247,7 +236,6 @@
 	};
 
 	/**
-	 * @function bind
 	 * @description wip
 	 * 
 	 * @param {*} event 
