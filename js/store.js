@@ -3,6 +3,7 @@
 	'use strict';
 
 	/**
+	 * @class Store
 	 * @description Creates a new client side storage object and will create an empty
 	 * collection if no collection already exists.
 	 *
@@ -27,6 +28,7 @@
 	}
 
 	/**
+	 * @memberof Store
 	 * @description Finds items based on a query given as a JS object
 	 *
 	 * @param {object} query The query to match against (i.e. {foo: 'bar'})
@@ -57,6 +59,7 @@
 	};
 
 	/**
+	 * @memberof Store
 	 * @description Will retrieve all data from the collection
 	 *
 	 * @param {function} callback The callback to fire upon retrieving data
@@ -67,6 +70,7 @@
 	};
 
 	/**
+	 * @memberof Store
 	 * @description Will save the given data to the DB. If no item exists it will create a new
 	 * item, otherwise it'll simply update an existing item's properties
 	 *
@@ -116,6 +120,7 @@
 	};
 
 	/**
+	 * @memberof Store
 	 * @description Will remove an item from the Store based on its ID
 	 *
 	 * @param {number} id The ID of the item you want to remove
@@ -153,6 +158,7 @@
 	};
 
 	/**
+	 * @memberof Store
 	 * @description Will drop all storage and start fresh
 	 *
 	 * @param {function} callback The callback to fire after dropping the data

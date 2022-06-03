@@ -2,9 +2,9 @@
 	'use strict';
 
 	/**
+	 * @class Model
 	 * @description Creates a new Model instance and hooks up the storage.
 	 *
-	 * @constructor
 	 * @param {object} storage A reference to the client side storage class
 	 */
 	function Model(storage) {
@@ -12,12 +12,13 @@
 	}
 
 	/**
+	 * @prototype create
 	 * @description Creates a new todo model
 	 *
 	 * @param {string} [title] The title of the task
 	 * @param {function} [callback] The callback to fire after the model is created
 	 */
-	Model.prototype.create = function (title, callback) {
+	Model.prototype.create = /** @lends create */function (title, callback) {
 		title = title || '';
 		callback = callback || function () {};
 
@@ -30,6 +31,7 @@
 	};
 
 	/**
+	 * @memberof Model
 	 * @description Finds and returns a model in storage. If no query is given it'll simply
 	 * return everything. If you pass in a string or number it'll look that up as
 	 * the ID of the model to find. Lastly, you can pass it an object to match
@@ -60,6 +62,7 @@
 	};
 
 	/**
+	 * @memberof Model
 	 * @description Updates a model by giving it an ID, data to update, and a callback to fire when
 	 * the update is complete.
 	 *
@@ -72,6 +75,7 @@
 	};
 
 	/**
+	 * @memberof Model
 	 * @description Removes a model from storage
 	 *
 	 * @param {number} id The ID of the model to remove
@@ -82,6 +86,7 @@
 	};
 
 	/**
+	 * @memberof Model
 	 * @description WARNING: Will remove ALL data from storage.
 	 *
 	 * @param {function} callback The callback to fire when the storage is wiped.
@@ -91,6 +96,7 @@
 	};
 
 	/**
+	 * @memberof Model
 	 * @description Returns a count of all todos
 	 */
 	Model.prototype.getCount = function (callback) {

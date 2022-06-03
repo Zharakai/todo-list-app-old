@@ -1,6 +1,6 @@
 /*global qs, qsa, $on, $parent, $delegate */
 
-(function (window) {
+(/** @lends View */function (window) {
 	'use strict';
 
 	/**
@@ -30,6 +30,7 @@
 	}
 
 	/**
+	 * @memberof View
 	 * @description Remove the item with this id as argument
 	 * 
 	 * @param {number} id 
@@ -38,12 +39,12 @@
 		var elem = qs('[data-id="' + id + '"]');
 
 		if (elem) {
-			console.log(this.$todoList);
 			this.$todoList.removeChild(elem);
 		}
 	};
 
 	/**
+	 * @memberof View
 	 * @description Hide or display button "Clear completed"
 	 * 
 	 * @param {number} completedCount 
@@ -55,7 +56,8 @@
 	};
 
 	/**
-	 * @description wip
+	 * @memberof View
+	 * @description Set selected filter (All, Active, Completed)
 	 * 
 	 * @param {string} currentPage 
 	 */
@@ -65,6 +67,7 @@
 	};
 
 	/**
+	 * @memberof View
 	 * @description Add "completed" class to li element with corresponding data-id
 	 * 
 	 * @param {number} id 
@@ -73,7 +76,6 @@
 	 */
 	View.prototype._elementComplete = function (id, completed) {
 		var listItem = qs('[data-id="' + id + '"]');
-		console.log(listItem);
 
 		if (!listItem) {
 			return;
@@ -86,13 +88,13 @@
 	};
 
 	/**
-	 * @description wip
+	 * @memberof View
+	 * @description Allows editing of a list item
 	 * 
-	 * @param {number} id 
-	 * @param {string} title 
+	 * @param {number} id
+	 * @param {string} title
 	 */
 	View.prototype._editItem = function (id, title) {
-		console.log(id, title);
 		var listItem = qs('[data-id="' + id + '"]');
 
 		if (!listItem) {
@@ -110,10 +112,11 @@
 	};
 
 	/**
-	 * @description wip
+	 * @memberof View
+	 * @description Returns the list item selected with the new modified title in the DOM
 	 * 
-	 * @param {number} id 
-	 * @param {string} title 
+	 * @param {number} id
+	 * @param {string} title
 	 */
 	View.prototype._editItemDone = function (id, title) {
 		var listItem = qs('[data-id="' + id + '"]');
@@ -133,13 +136,13 @@
 	};
 
 	/**
-	 * @description wip
+	 * @memberof View
+	 * @description Use one of the render command
 	 * 
-	 * @param {string} viewCmd
+	 * @param {string} viewCmd Name of the command to run
 	 * @param {object} parameter 
 	 */
 	View.prototype.render = function (viewCmd, parameter) {
-		console.log(typeof viewCmd, parameter);
 		var self = this;
 		var viewCommands = {
 			showEntries: function () {
@@ -181,25 +184,26 @@
 	};
 
 	/**
+	 * @memberof View
 	 * @description Return id of a checked element
 	 * 
 	 * @param {HTMLElement} element 
 	 * @returns {number}
 	 */
 	View.prototype._itemId = function (element) {
-		console.log(element);
 		var li = $parent(element, 'li');
-		console.log(parseInt(li.dataset.id, 10));
 		return parseInt(li.dataset.id, 10);
 	};
 
 	/**
+	 * @memberof View
 	 * @description wip
 	 * 
 	 * @param {*} handler 
 	 */
 	View.prototype._bindItemEditDone = function (handler) {
 		var self = this;
+		console.log(this, handler);
 		$delegate(self.$todoList, 'li .edit', 'blur', function () {
 			if (!this.dataset.iscanceled) {
 				handler({
@@ -219,6 +223,7 @@
 	};
 
 	/**
+	 * @memberof View
 	 * @description wip
 	 * 
 	 * @param {*} handler 
@@ -236,6 +241,7 @@
 	};
 
 	/**
+	 * @memberof View
 	 * @description wip
 	 * 
 	 * @param {*} event 
